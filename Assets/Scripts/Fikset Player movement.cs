@@ -1,35 +1,42 @@
 using UnityEngine;
-using UnityEngine.UI; // Required for UI elements like Text
+using UnityEngine.UI; // Required for UI elements like Text and Slider
 using TMPro;
 
 public class FiksetPlayermovement : MonoBehaviour
 {
-    [SerializeField] private float speed; // Make speed editable in Unity
+    [SerializeField] private float speed;
     private Rigidbody2D body;
     private Animator anim;
     private bool grounded;
     public int extraJumpValue;
-    public int maxExtraJumps = 1; // How many extra jumps the player gets
-    public int applered = 1; // Sætter værdi for rødt æble
-    public int applegreen = 5; // sætter grønt
+    public int maxExtraJumps = 1;
+    public int applered = 1;
+    public int applegreen = 5;
     public Vector3 respawnPoint;
-    public GameObject FallDetector; // Should be assigned in Unity Editor
+    public GameObject FallDetector;
 
     // Point system
-    private int score; // This will hold the player's score
-    public TMP_Text scoreText; // UI Text element to display the score (optional)
+    private int score;
+    public TMP_Text scoreText;
+
+    // Health system
+    public int maxLives = 3;
+    private int currentLives;
+    public Slider healthBar;
+    public TMP_Text livesText;
 
     private void Awake()
     {
-        // Refer to the Rigidbody and Animator components of the player
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         extraJumpValue = maxExtraJumps;
         respawnPoint = transform.position;
 
-        // Initialize score
+        // Initialize score and lives
         score = 0;
+        currentLives = maxLives;
         UpdateScoreText();
+        UpdateHealthUI();
     }
 
     private void Update()
@@ -44,20 +51,19 @@ public class FiksetPlayermovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
 
         // Jump logic
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
-            if (grounded)  // Single jump
+            if (grounded)
             {
                 Jump();
             }
-            else if (extraJumpValue > 0)  // Double jump
+            else if (extraJumpValue > 0)
             {
                 Jump();
-                extraJumpValue--;  // Reduce available jumps
+                extraJumpValue--;
             }
         }
 
-        // Set animator parameters
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", grounded);
 
@@ -68,12 +74,13 @@ public class FiksetPlayermovement : MonoBehaviour
         }
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
-            grounded = true; // Reset grounded when player touches the ground
-            extraJumpValue = maxExtraJumps;  // Reset extra jumps when grounded
+            grounded = true;
+            extraJumpValue = maxExtraJumps;
         }
     }
 
@@ -81,7 +88,7 @@ public class FiksetPlayermovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            grounded = false; // Set grounded to false when player leaves the ground
+            grounded = false;
         }
     }
 
@@ -89,34 +96,31 @@ public class FiksetPlayermovement : MonoBehaviour
     {
         body.velocity = new Vector2(body.velocity.x, speed);
         anim.SetTrigger("jump");
-        grounded = false;  // Set grounded to false when the player jumps
+        grounded = false;
     }
 
-    // Respawn system til start hver gang man falder
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "FallDetector")
         {
-            transform.position = respawnPoint;
-            
+            LoseLife();
         }
-        // Collect coin
+
         if (collision.gameObject.CompareTag("Redapple"))
         {
-            score += applered; // Increment the score
-            UpdateScoreText(); // Update the score UI
-            Destroy(collision.gameObject); // Destroy the coin object
+            score += applered;
+            UpdateScoreText();
+            collision.gameObject.SetActive(false); // Disable instead of destroy
         }
 
         if (collision.gameObject.CompareTag("Greenapple"))
         {
-            score += 5; // Increment the score
-            UpdateScoreText(); // Update the score UI
-            Destroy(collision.gameObject); // Destroy the coin object
+            score += applegreen;
+            UpdateScoreText();
+            collision.gameObject.SetActive(false); // Disable instead of destroy
         }
     }
 
-    // Updates the score display in the UI
     private void UpdateScoreText()
     {
         if (scoreText != null)
@@ -125,8 +129,70 @@ public class FiksetPlayermovement : MonoBehaviour
         }
     }
 
+    private void LoseLife()
+    {
+        currentLives--;
+
+        if (currentLives <= 0)
+        {
+            // Reset lives, score, and respawn apples when lives are depleted
+            ResetGame();
+        }
+        else
+        {
+            // Respawn player at the last checkpoint
+            transform.position = respawnPoint;
+        }
+
+        UpdateHealthUI();
+    }
+
+   private void ResetGame()
+{
+    currentLives = maxLives;
+    score = 0;
+    UpdateScoreText();
+    UpdateHealthUI();
+    RespawnAllApples(); // Reactivates apples
+    transform.position = respawnPoint; // Resets player position
+    body.velocity = Vector2.zero; // Reset velocity to prevent falling immediately
+}
+
+    private void UpdateHealthUI()
+    {
+        if (healthBar != null)
+        {
+            healthBar.value = (float)currentLives / maxLives;
+        }
+
+        if (livesText != null)
+        {
+            livesText.text = "Lives: " + currentLives;
+        }
+    }
+
+    private void RespawnAllApples()
+    {
+        GameObject[] redApples = GameObject.FindGameObjectsWithTag("Redapple");
+        GameObject[] greenApples = GameObject.FindGameObjectsWithTag("Greenapple");
+
+        foreach (GameObject apple in redApples)
+        {
+            apple.SetActive(true);
+        }
+
+        foreach (GameObject apple in greenApples)
+        {
+            apple.SetActive(true);
+        }
+    }
+
     private void OnGUI()
     {
         GUI.Label(new Rect(0, 0, 0, 0), "Score: " + score.ToString());
+    }
+    public void SetRespawnPoint(Vector3 newRespawnPoint)
+    {
+        respawnPoint = newRespawnPoint;
     }
 }
