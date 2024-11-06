@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI; // Required for UI elements like Text and Slider
 using TMPro;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class FiksetPlayermovement : MonoBehaviour
 {
@@ -190,4 +192,9 @@ public class FiksetPlayermovement : MonoBehaviour
     {
         respawnPoint = newRespawnPoint;
     }
+
+  
+
+   
+
 }
