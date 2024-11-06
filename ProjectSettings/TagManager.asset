@@ -8,6 +8,7 @@ TagManager:
   - Redapple
   - FallDetector
   - Greenapple
+  - SceneSwitch
   layers:
   - Default
   - TransparentFX
