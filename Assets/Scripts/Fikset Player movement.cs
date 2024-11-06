@@ -74,7 +74,6 @@ public class FiksetPlayermovement : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -136,7 +135,7 @@ public class FiksetPlayermovement : MonoBehaviour
         if (currentLives <= 0)
         {
             // Reset lives, score, and respawn apples when lives are depleted
-            ResetGame();
+            RestartGame();
         }
         else
         {
@@ -147,16 +146,11 @@ public class FiksetPlayermovement : MonoBehaviour
         UpdateHealthUI();
     }
 
-   private void ResetGame()
-{
-    currentLives = maxLives;
-    score = 0;
-    UpdateScoreText();
-    UpdateHealthUI();
-    RespawnAllApples(); // Reactivates apples
-    transform.position = respawnPoint; // Resets player position
-    body.velocity = Vector2.zero; // Reset velocity to prevent falling immediately
-}
+    private void RestartGame()
+    {
+        // Reload the currently active scene to restart the game completely
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
 
     private void UpdateHealthUI()
     {
@@ -191,6 +185,7 @@ public class FiksetPlayermovement : MonoBehaviour
     {
         GUI.Label(new Rect(0, 0, 0, 0), "Score: " + score.ToString());
     }
+
     public void SetRespawnPoint(Vector3 newRespawnPoint)
     {
         respawnPoint = newRespawnPoint;

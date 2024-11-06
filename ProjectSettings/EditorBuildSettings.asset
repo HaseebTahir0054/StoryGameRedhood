@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/1 -Normal Bne.unity
+    guid: 7876a16275a8bcb4090bcbddd9092afb
+  - enabled: 1
+    path: Assets/Scenes/2 - Farlig bane.unity
+    guid: b1507d47da4f9c84b8a66ef31992b075
+  - enabled: 1
+    path: Assets/Scenes/3 Fristende.unity
+    guid: 42124e39e5887054292b116b30835388
   m_configObjects: {}
