@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
 
-public class NPC_Kvinde : MonoBehaviour
+public class npckvinde : MonoBehaviour
 {
     public NPCConversation myConversation;
 
-    private void OnMouseOver()
+    private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             ConversationManager.Instance.StartConversation(myConversation);
-
-
         }
-        
     }
 }
