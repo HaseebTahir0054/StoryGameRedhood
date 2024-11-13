@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3 Fristende.unity
     guid: 42124e39e5887054292b116b30835388
+  - enabled: 1
+    path: Assets/Scenes/4 - Skole.unity
+    guid: 50a61e36e9ad3f34d9accb3359611ebf
   m_configObjects: {}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
 
-public class npckvinde : MonoBehaviour
+public class npcmand : MonoBehaviour
 {
     public NPCConversation myConversation;
 
