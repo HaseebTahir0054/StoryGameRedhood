@@ -16,6 +16,7 @@ public class FiksetPlayermovement : MonoBehaviour
     public int applegreen = 5;
     public Vector3 respawnPoint;
     public GameObject FallDetector;
+    public GameObject deathPanel; // Reference to the Death Panel UI
 
     // Point system
     private int score;
@@ -39,6 +40,11 @@ public class FiksetPlayermovement : MonoBehaviour
         currentLives = maxLives;
         UpdateScoreText();
         UpdateHealthUI();
+
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(false); // Ensure Death Panel is hidden at the start of the game
+        }
     }
 
     private void Update()
@@ -136,8 +142,11 @@ public class FiksetPlayermovement : MonoBehaviour
 
         if (currentLives <= 0)
         {
-            // Reset lives, score, and respawn apples when lives are depleted
-            RestartGame();
+            // Show death panel when lives are depleted
+            if (deathPanel != null)
+            {
+                deathPanel.SetActive(true);
+            }
         }
         else
         {
@@ -150,8 +159,17 @@ public class FiksetPlayermovement : MonoBehaviour
 
     private void RestartGame()
     {
-        // Reload the currently active scene to restart the game completely
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        // Reset score and lives
+        score = 0;
+        currentLives = maxLives;
+        UpdateScoreText();
+        UpdateHealthUI();
+
+        // Respawn all apples
+        RespawnAllApples();
+
+        // Reload the first scene (assuming it is at index 0)
+        SceneManager.LoadScene(0);
     }
 
     private void UpdateHealthUI()
@@ -193,8 +211,19 @@ public class FiksetPlayermovement : MonoBehaviour
         respawnPoint = newRespawnPoint;
     }
 
-  
+    // Method to handle Quit button action
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 
-   
-
+    // Method to handle Retry button action
+    public void RetryGame()
+    {
+        RestartGame();
+    }
 }
