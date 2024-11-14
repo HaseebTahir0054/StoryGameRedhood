@@ -10992,18 +10992,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 12
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":475.399963,\"yPos\":70.59993},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"er
-    lidt sent p\xE5 den. men bare rolige skal nok n\xE5 det.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":163.9,\"yPos\":77.59999},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Nej
-    nej, bare tag det roligt \",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":35.99997,\"yPos\":396.600464},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"ja
-    ja \",\"parentUIDs\":[6],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":343.199982,\"yPos\":400.600464},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"okay
-    tak, vi ses senere \",\"parentUIDs\":[6],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":338.399963,\"yPos\":-32.4001},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Hva
-    s\xE5 r\xF8dh\xE6tte,klokken er n\xE6sten 8 kommer du ikke forsent i skole? \",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":474.699951,\"yPos\":156.999786},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Okay
-    godt, Men r\xF8dh\xE6tte huks nu at passe p\xE5. ladv\xE6r med at tage genveje,
-    blivs p\xE5 stien og ik snak med fremmmede \",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":164,\"yPos\":182.399765},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"n\xE5r
-    okay. men skynd dig nu alligevel.\",\"parentUIDs\":[4],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":9}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":184,\"yPos\":293.600159},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"hey
-    r\xF8dh\xE6tte. Huks nu at passe p\xE5. ladv\xE6r med at tage genveje, blivs
-    p\xE5 stien og ik snak med fremmmede \",\"parentUIDs\":[5],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":192.799988,\"yPos\":477.599731},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"vi
-    ses\",\"parentUIDs\":[8,9],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":532.999756,\"yPos\":-153.399857},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Er
+    lidt sent p\xE5 den. Men bare rolige skal nok n\xE5 det. Samler nogle \xE6bler,
+    s\xE5 bliver min l\xE6rer glad\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":221.500031,\"yPos\":-146.3998},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Nej
+    nej, bare tag det roligt. Jeg tager nogle \xE6bler med til min l\xE6rer, det
+    burde g\xF8re hende glad. \",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":93.6000061,\"yPos\":172.601013},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"ja
+    ja \",\"parentUIDs\":[6],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":400.800018,\"yPos\":176.601013},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"okay
+    tak, vi ses senere \",\"parentUIDs\":[6],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":396,\"yPos\":-256.399963},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Hva
+    s\xE5 r\xF8dh\xE6tte,klokken er n\xE6sten 8, bliver din l\xE6rer ik sur over
+    at du kommer for sent i skole?\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":532.2998,\"yPos\":-66.9999542},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Okay
+    godt, men r\xF8dh\xE6tte huks nu at passe p\xE5. Lad v\xE6r med at tage genveje,
+    bliv p\xE5 stien og ik snak med fremmede. og lad v\xE6r med at blive fristet
+    af \xE6bler  \",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":221.600037,\"yPos\":-41.5999146},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"N\xE5r
+    okay...Men skynd dig nu alligevel.\",\"parentUIDs\":[4],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":9}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":241.600037,\"yPos\":69.6005859},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"hey
+    r\xF8dh\xE6tte... Huks nu at passe p\xE5. Lad v\xE6r med at tage genveje, blivs
+    p\xE5 stien og ik snak med fremmede og lad v\xE6r med at blive fristet af \xE6bler 
+    \",\"parentUIDs\":[5],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":250.400024,\"yPos\":253.600311},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"vi
+    ses. Husk bliv p\xE5 stien\",\"parentUIDs\":[8,9],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Veninde\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -11395,7 +11400,7 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 3
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: d84adacfa4e44bf499fb78e9301de985, type: 3}
   Audio: {fileID: 0}
 --- !u!114 &882712975
 MonoBehaviour:
@@ -11452,7 +11457,7 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 10
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: d84adacfa4e44bf499fb78e9301de985, type: 3}
   Audio: {fileID: 0}
 --- !u!114 &882712978
 MonoBehaviour:
@@ -11509,7 +11514,7 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 6
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: d84adacfa4e44bf499fb78e9301de985, type: 3}
   Audio: {fileID: 0}
 --- !u!114 &882712981
 MonoBehaviour:
@@ -11528,7 +11533,7 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 5
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: d84adacfa4e44bf499fb78e9301de985, type: 3}
   Audio: {fileID: 0}
 --- !u!1 &883326902
 GameObject:
